@@ -1,2 +1,8 @@
 /Debug
+/terrain_editor/Debug
 *.opensdf
+*.sdf
+*.log
+*.obj
+*.idb
+*.pbd
