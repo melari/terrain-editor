@@ -11,5 +11,5 @@
 #include <tchar.h>
 
 
-
-// TODO: reference additional headers your program requires here
+#include <GL/glut.h>
+#include <GL/freeglut.h>

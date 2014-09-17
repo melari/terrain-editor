@@ -1,18 +1,22 @@
 #include "stdafx.h"
-#include <GL/glut.h>
-#include <GL/freeglut.h>
 #include <iostream>
+
+#include "Camera.h"
+
+Camera camera;
 
 void render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	camera.applyTransformation();
+	
 	glBegin(GL_TRIANGLES);
-
-	glVertex3f(-2, -2, -5.0);
-	glVertex3f(2, 0.0, -5.0);
-	glVertex3f(0.0, 2, -5.0);
-
+		glVertex3f(-2, -2, -5.0);
+		glVertex3f(2, 0.0, -5.0);
+		glVertex3f(0.0, 2, -5.0);
 	glEnd();
+
 	glutSwapBuffers();
 }
 
@@ -35,6 +39,7 @@ int main(int argc, char **argv)
 
 	glutDisplayFunc(render);
 	glutReshapeFunc(changeSize);
+	glutIdleFunc(render);
 	
 	glutMainLoop();
 	return 0;
